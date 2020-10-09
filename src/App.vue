@@ -1,17 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <section>
+      <p>Times clicked: {{ count }}</p>
+      <button @click="increment">increment</button>
+    </section>
+    <section>
+      <br />
+      <button @click="resetCount">Reset</button>
+    </section>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "App",
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  methods: {
+    increment() {
+      this.count++;
+    },
+    resetCount() {
+      this.count = 0;
+    },
   },
 };
 </script>

@@ -13,3 +13,10 @@ test("increment the count", async () => {
   await fireEvent.click(increment);
   getByText("Times clicked: 1");
 });
+
+test("user can see input on the screen", async () => {
+  const { getByLabelText, getByText } = render(App);
+  const input = getByLabelText("Start Typing");
+  await fireEvent.update(input, "Quail man, whubalabadubdub");
+  getByText("You typed: Quail man, whubalabadubdub");
+});

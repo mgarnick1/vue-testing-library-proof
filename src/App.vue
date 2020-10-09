@@ -16,6 +16,12 @@
       <br />
       <button @click="resetCount">Reset</button>
     </section>
+    <section>
+      <br />
+      <label for="item">Start Typing</label>
+      <input type="text" v-model="item" id="item" />
+      <div>You typed: {{ item }}</div>
+    </section>
   </div>
 </template>
 
@@ -25,6 +31,7 @@ export default {
   data() {
     return {
       count: 0,
+      item: "",
     };
   },
   methods: {

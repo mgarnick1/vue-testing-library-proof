@@ -6,6 +6,14 @@
     </section>
     <section>
       <br />
+      <button @click="tenTimes">Increment by 10</button>
+    </section>
+    <section>
+      <br />
+      <button @click="decrement">Decrement</button>
+    </section>
+    <section>
+      <br />
       <button @click="resetCount">Reset</button>
     </section>
   </div>
@@ -25,6 +33,12 @@ export default {
     },
     resetCount() {
       this.count = 0;
+    },
+    decrement() {
+      this.count--;
+    },
+    tenTimes() {
+      this.count += 10;
     },
   },
 };
